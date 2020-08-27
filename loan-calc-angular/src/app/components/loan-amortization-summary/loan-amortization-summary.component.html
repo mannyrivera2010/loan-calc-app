@@ -1,0 +1,21 @@
+ 
+<div class="card bg-light mb-3"> <!-- style="max-width: 24rem;" -->
+    <div class="card-header">loan summary</div>
+    <div class="card-body" *ngIf="!loanSummaryInput">
+        Please submit
+    </div>
+
+    <div class="card-body" *ngIf="loanSummaryInput">
+        <b>Monthly Payment:</b> {{ loanSummaryInput.monthlyPayment | currency:'USD':'symbol-narrow' }}
+        <br>
+        <b>Total Interest Paid:</b> {{ loanSummaryInput.totalInterestPaid | currency:'USD':'symbol-narrow' }}
+        <br>	
+        <b>Total of number of payments:</b> {{ loanSummaryInput.totalPayments }}
+        <br>
+        <b>Total Payment Amount:</b> {{ loanSummaryInput.totalPaymentAmount | currency:'USD':'symbol-narrow' }}
+        <br>
+        <b>Pay-off Date:</b> {{ loanSummaryInput.payOffDate | date:'MM-yyyy'}}
+        <br>
+    </div>
+
+</div>
